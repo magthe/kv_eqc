@@ -35,7 +35,7 @@ insert(K,V,{node,L,KN,VN,R}) ->
      K==KN ->
       {node,L,K,V,R};
      K>KN ->
-      insert(K,V,R)
+         {node, L, KN, VN, insert(K,V,R)}
   end.
 
 lookup(_,leaf) ->
